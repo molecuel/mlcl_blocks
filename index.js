@@ -37,7 +37,6 @@ blocks.prototype.get = function get(req, res, next) {
     async.each(Object.keys(res.locals.data), function(key, cb) {
       var data = res.locals.data[key] || {};
       var blocks = data.blocks || [];
-      //data.blocks = [];
       async.each(blocks, function(block, cb) {
         self.block(req, res, block, function(err, block) {
           if(err) {
@@ -64,7 +63,9 @@ blocks.prototype.block = function block(req, res, block, callback) {
   if(this.typeHandlerRegistry[type]) {
     async.each(this.typeHandlerRegistry[type], function(handler, cb) {
       handler.apply(self, [req, res, block, function(err, result) {
-        block.result = result;
+        if(result) {
+          block.result = result;
+        }
         cb(err);
       }]);
     }, function(err) {
