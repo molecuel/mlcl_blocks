@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "dependencies": {
     "underscore": ">=0.0.1",
-    "async": ">=0.0.1"
+    "async": ">=2.5.0"
   },
   "description": "A molecuel cms module for arranging content within a website",
   "main": "index.js",
