@@ -2,7 +2,7 @@
   "name": "mlcl_blocks",
   "version": "0.0.2",
   "dependencies": {
-    "underscore": ">=0.0.1",
+    "underscore": ">=1.9.1",
     "async": ">=0.0.1"
   },
   "description": "A molecuel cms module for arranging content within a website",
